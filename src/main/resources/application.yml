@@ -1,0 +1,40 @@
+#配置端口号
+server:
+  port: 9090
+  servlet:
+    context-path: /
+    session:
+      timeout: 24h
+
+
+
+#配置视图解析器
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  application:
+    name: dg-training-master
+  datasource:
+    druid:
+      username: root
+      password: 123456
+      url: jdbc:mysql://localhost:3306/trainer?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+      #password: i9113wDC5V/
+      #url: jdbc:mysql://1.12.233.55:3306/trainer?useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 初始连接数
+      initial-size: 1
+      # 最大连接数
+      max-active: 3
+  redis:
+    host: 127.0.0.1
+    #host: 1.12.233.55
+    port: 6379
+    #password: 123
+    database: 1
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
